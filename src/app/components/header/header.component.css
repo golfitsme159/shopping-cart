@@ -1,0 +1,22 @@
+header {
+  /* display: flex; */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.btn.cart-box{
+    margin: 6px 12px;
+    border: none;
+}
+
+.box-bg{
+  background: white;
+  padding: 10px 17px;
+  border-radius: 50px;
+}

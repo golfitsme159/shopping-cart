@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('assets/img/background.jpg');
+}
