@@ -1,28 +1,14 @@
-# Shopping
+## Run Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
-## Development server
+![1](https://user-images.githubusercontent.com/96619833/183286272-ed11b641-affa-4c3c-bebe-84ea055d58eb.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+![2](https://user-images.githubusercontent.com/96619833/183286278-de839c09-3963-4780-b323-58ebd328f85b.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+![3](https://user-images.githubusercontent.com/96619833/183286280-f811c64d-0453-4852-8afe-a9159f616a1d.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+![4](https://user-images.githubusercontent.com/96619833/183286281-09440e73-28e1-4466-8fec-c66b7b72cfb3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# shopping-cart" 
