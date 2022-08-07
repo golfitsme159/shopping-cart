@@ -1,33 +1,57 @@
-<ng-container  *ngIf="true">
-    <div class="container">
-        <div class="card-table">
-            <div class="card-product">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>ชื่อหนัง</th>
-                            <th>รูปหนัง</th>
-                            <th>ราคา</th>
-                            <th>ลบ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>กฟกฟ</td>
-                            <td>แืผปมทแผืแผทมป</td>
-                            <td><button class="btn btn-danger"><i class="material-symbols-outlined">delete</i></button></td>
-                            
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<ng-container *ngIf="products.length !=0">
+  <div class="container">
+    <div class="card-table">
+      <div class="card-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>ชื่อหนัง</th>
+              <th>รูปหนัง</th>
+              <th>ราคา</th>
+              <th>ลบ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ item.original_title }}</td>
+              <td>
+                <img
+                  src="http://image.tmdb.org/t/p/w500{{ item.poster_path }}"
+                  style="width: 120px"
+                />
+              </td >
+              <td style="width: 10%;">${{ item.popularity }}</td>
+              <td style="width: 10%;">
+                <button (click)="removeProduct(item)" class="btn btn-danger">
+                  <i class="material-symbols-outlined">delete</i>
+                </button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <tr>
+            <td colspan="4" ></td>
+            <td><button (click)="removeAllProduct()" class="btn btn-danger" style="margin: 10px;">ลบสินค้าทั้งหมด</button></td>
+            <td><button routerLink="/home" class="btn btn-warning" style="margin: 10px;">กลับไปซื้อสินค้า</button></td>
+            <td><button (click)="payProduct()" class="btn btn-success" style="margin: 10px;">ชำระเงิน</button></td>
+            <td><strong>ราคารวม: ${{allProducts}}</strong></td>
+        </tr>
+      </div>
     </div>
+  </div>
 </ng-container>
 
+<ng-template #callqrDialog>
+  <form>
+    <h1>ชำระเงิน</h1>
+    <img src="../assets/img/QR.png" style="width: 250px;" >
+    <p>จำนวนเงิน : ${{allProducts}}</p>
+    <!-- <button type="submit">ยืนยัน</button> -->
+  </form>
+</ng-template>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="products.length === 0">
   <div class="container">
     <div class="card">
       <h4 class="card-title">ตะกร้าของคุณ</h4>
@@ -36,7 +60,7 @@
       <img src="../assets/img/notsp.jpg" alt="" />
       <h5>ไม่มีสินค้าอยู่ในตะกร้าของคุณ</h5>
       <h6>คุณต้องการเพิ่มรายการสินค้า</h6>
-      <button class="btn btn-primary">กลับไปซื้อสินค้า</button>
+      <button routerLink="/home" class="btn btn-primary">กลับไปซื้อสินค้า</button>
     </div>
   </div>
 </ng-container>

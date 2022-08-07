@@ -4,13 +4,16 @@ import { CartapiService } from 'src/app/service/cartapi.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  totalItemNumber: number = 0;
 
-  constructor(private cartApi:CartapiService) { }
+  constructor(private cartApi: CartapiService) {}
 
   ngOnInit(): void {
+    this.cartApi.getProductData().subscribe((res) => {
+      this.totalItemNumber = res.length;
+    });
   }
-
 }

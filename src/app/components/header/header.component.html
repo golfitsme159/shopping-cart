@@ -10,8 +10,9 @@
           aria-label="Search"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
-        <button class="cart-box btn">
+        <button routerLink="cart" class="cart-box btn">
           <i class="material-symbols-outlined">shopping_bag</i>
+          <div class="badge bg-danger">{{totalItemNumber}}</div>
         </button>
       </form>
     </div>

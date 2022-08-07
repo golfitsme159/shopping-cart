@@ -26,17 +26,18 @@ export class CartapiService {
   addToCart(product: any) {
     this.cartDataList.push(product);
     this.productList.next(this.cartDataList);
-    // this.getTotalAmount();
+    this.getTotalAmount();
     console.log(this.cartDataList);
-    
   }
 
-  // getTotalAmount() {
-  //   let grandTotal = 0;
-  //   this.cartDataList.map((a: any) => {
-  //     grandTotal += a.total;
-  //   });
-  // }
+  // จำนวนรวม
+  getTotalAmount() {
+    let grandTotal = 0;
+    this.cartDataList.map((a: any) => {
+      grandTotal += a.popularity;
+    });
+    return grandTotal;
+  }
 
   //ลบสินค้าในตะกร้า
   removeCartData(product: any) {
@@ -45,5 +46,11 @@ export class CartapiService {
         this.cartDataList.splice(index, 1);
       }
     });
+    this.productList.next(this.cartDataList);
+  }
+
+  removeAllCart() {
+    this.cartDataList = [];
+    this.productList.next(this.cartDataList);
   }
 }
